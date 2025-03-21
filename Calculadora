@@ -1,0 +1,51 @@
+while True:
+	cab = """
+ =========================
+ 	   CALCULADORA
+ =========================
+	Digite a operação:
+	[1] soma
+	[2] subtraçao
+	[3] multiplicação
+	[4] divisão
+ ========================= """
+	print(cab)
+	res = "\nOperação Invalida!!\n"
+	op = input('\n--> ')
+	
+	if op == '' or op > '4' or op.isalpha():
+		print(res)
+		continue
+	
+	n1 = input("primeiro numero: ")
+	if n1 == '' or n1.isalpha():
+		print(res)
+		continue
+	
+	n2 = input("segundo  numero: ")
+	if n2 == '' or n2.isalpha():
+		print(res)
+	
+	else:
+		op, n1, n2 = int(op), int(n1), int(n2)
+		if op == 1:
+			res = (n1 + n2)
+		elif op == 2:
+			res = (n1 - n2)
+		elif op == 3:
+			res = (n1 * n2)
+		elif op == 4:
+			if n2 == 0:
+				print("Não é possivel divisão por 0, digite outro valor!!!")
+				continue
+			else:
+				res = (n1 / n2)
+		else:
+			print(res)
+		print('\nSolução:', res)
+		rep = input("\nNovo Calculo? (s/n): ")
+		if rep == 's':
+			continue
+		else:
+			print('Bye,Bye, Até a Proxima.!!')
+			break
