@@ -1,0 +1,9 @@
+"""
+Como achar a posição do item de valor mínimo numa lista em Python?
+"""
+
+lista = [12,34,66,81,31,84,97,10,24,18,16,32]
+menor_valor = lista[0]
+menor_valor = [valor for valor in lista if valor < menor_valor]
+
+print("O Menor valor da lista é {}, é encontrado na {}ª posição.". format(*menor_valor,lista.index(*menor_valor)+1))
