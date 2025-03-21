@@ -1,0 +1,10 @@
+# Gera 10 Senhas Fortes
+import random
+import string
+
+for _ in range(10):
+  senha = (''.join(random.choices(string.ascii_letters + string.digits + string.punctuation, k=20)))
+  senha_lista = list(senha)  # Converte a string em uma lista
+  random.shuffle(senha_lista)  # Embaralha a lista
+  senha = ''.join(senha_lista)  # Junta a lista de volta em uma string
+  print(senha)
