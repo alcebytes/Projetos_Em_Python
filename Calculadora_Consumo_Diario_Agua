@@ -1,0 +1,22 @@
+print("\x1b[2J\x1b[1;1H") # limpa a tela
+
+def cabecalho(msg):
+    print("="*50)
+    print(msg.center(50))
+    print("="*50)
+
+cabecalho("\
+          CALCULADORA CONSUMO D'ÁGUA\n\n\
+    DESCUBRA A QUANTIDADE E A FREQUÊNCIA,\n\
+     DE QUANTO EM QUANTO TEMPO DEVE-SE\n\
+        BEBER ÁGUA DURANTE O DIA" )
+
+peso = float(input("\nInforme seu peso (kg)?: "))
+K = 35 # contante
+qt_agua_kg_peso = (peso * K)
+print(f"\nSeu consumo ideal é {qt_agua_kg_peso/1000} Litros de água por dia.")
+medida = int(input("\nInforme medida da dose diária (copo\ml)?: "))
+qt_copos = (qt_agua_kg_peso / medida)
+tempo = (qt_agua_kg_peso / 60)
+
+print(f"\nVocê precisa consumir {round(qt_copos+0.5)} copos de {medida} ml a cada {round(tempo-0.5)} minutos.\n\n")
