@@ -1,3 +1,4 @@
+# Calculadora faz as 4 operações, calcula qualquer número
 while True:
 	cab = """
  =========================
