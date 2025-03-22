@@ -1,0 +1,45 @@
+import random
+
+print('''----------------------------------
+            JO - KEN - PÔ
+  O jogador só pode optar por
+  0(pedra), 1(papel), 2(tesoura)
+  Vamos jogar?
+---------------------------------  ''')
+op = ('pedra', 'papel', 'tesoura')
+
+def validacao():
+	global jogador1, jogador2
+	while True:
+		jogador2 = random.randint(0, 2)
+
+		try:
+			jogador1 = int(input('JOGADOR_1: '))
+		except ValueError:
+			print('OPÇÃO INVÁLIDA, JOGUE DE NOVO!')
+			print('---------------------------------')
+		else:
+			if not jogador1 in (0, 1, 2):
+				print('OPÇÃO INVÁLIDA, JOGUE DE NOVO!')
+				print('---------------------------------')
+			else:
+				break
+
+	print('---------------------------------')
+	print('JOGADOR_1 JOGOU:', op[jogador1].upper())
+	print('JOGADOR_2 JOGOU:', op[jogador2].upper())
+
+res = 's'
+while res != 'n':
+	validacao()
+	print('---------------------------------')
+	if jogador1 == jogador2:
+		print('EMPATE'.center(30))
+	elif (jogador1 - jogador2 == -2) or (jogador1 - jogador2 == 1):
+		print('JOGADOR_1, GANHA'.center(30))
+	else:
+		print('JOGADOR_2, GANHA'.center(30))
+	print('---------------------------------')
+	res = input("JOGAR DE NOVO? SIM/NÃO? ").lower()[0]
+	print('---------------------------------')
+print("ATÉ A PROXIMA!")
