@@ -1,4 +1,4 @@
-# 8 Projetos feito em Python 
+# Projetos feito em Python 
 
 [Vídeo original que deu a ideia para os projetos](https://www.youtube.com/watch?v=ZJV5z21eNXA&t=104s)
 
